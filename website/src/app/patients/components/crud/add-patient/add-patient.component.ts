@@ -1,17 +1,51 @@
 import { Component, OnInit } from '@angular/core';
 import { Patient } from 'src/app/patients/models/patient';
-import {FormControl, Validators} from '@angular/forms';
+import {FormControl, Validators, FormGroup, FormBuilder} from '@angular/forms';
+import { Router } from '@angular/router';
+import { CrudService } from '../../../services/crud.service';
+
 @Component({
   selector: 'app-add-patient',
   templateUrl: './add-patient.component.html',
   styleUrls: ['./add-patient.component.scss'],
 })
-export class AddPatientComponent implements OnInit {
+export class AddPatientComponent implements OnInit 
+{
   newPatient = new Patient();
   email = new FormControl('', [Validators.required, Validators.email]);
-  constructor() { }
 
-  ngOnInit() {}
+  todoForm: FormGroup;
+
+  constructor(
+    private crudService: CrudService,
+    public formBuilder: FormBuilder,    
+    private router: Router
+  ) { }
+
+  ngOnInit() {
+    this.todoForm = this.formBuilder.group({
+      name: [''],
+      address: [''],
+      email: [''],
+      phoneNumber1: [''],
+      phoneNumber2: ['']
+    })
+  }
+
+  onSubmit() {
+    if (!this.todoForm.valid) {
+      return false;
+    } else {
+      this.crudService.create(this.todoForm.value)
+      .then(() => {
+        this.todoForm.reset();
+        this.router.navigate(['/todo-list']);
+      }).catch((err) => {
+        console.log(err)
+      });
+    }
+  }
+
   getErrorMessage() {
     if (this.email.hasError('required')) {
       return 'Por favor ingrese un correo electrónico';

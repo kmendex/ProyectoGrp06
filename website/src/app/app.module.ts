@@ -8,7 +8,16 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {firebaseConfig} from '../environments/environment';
+//  Firebase modules
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+
+// Environment
+import { environment } from '../environments/environment';
+
+
+//import {firebaseConfig} from '../environments/environment';
 //import { AngularFireModule } from '@angular/fire';
 //import {AngularFireAuthModule} from '@angular/fire/auth/auth.module'
 //import {AngularFireStorageModule} from '@angular/fire/storage/storage.module'
@@ -20,6 +29,8 @@ import {firebaseConfig} from '../environments/environment';
     , IonicModule.forRoot()
     , AppRoutingModule
     , BrowserAnimationsModule
+    , AngularFireModule.initializeApp(environment.firebaseConfig)
+    , AngularFireDatabaseModule
    // , AngularFireModule.initializeApp(firebaseConfig)
    // , AngularFireAuthModule
     //, AngularFireStorageModule
