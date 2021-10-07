@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'pacientes',
     loadChildren: () => import('./patients/pages/pacientes/pacientes.module').then( m => m.PacientesPageModule)
   },
+  {
+    path: 'update-patient/:id',
+    loadChildren: () => import('./patients/pages/update-patient/update-patient.module').then( m => m.UpdatePatientPageModule)
+  }
 
 ];
 

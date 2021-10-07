@@ -32,10 +32,11 @@ export class CrudService {
   }
 
   update(id, todo: TODO) {
-    this.ngFirestore.collection('pacientes').doc(id).update(todo)
-      .then(() => {
-        this.router.navigate(['/todo-list']);
-      }).catch(error => console.log(error));;
+    return this.ngFirestore.collection('pacientes').doc(id).update(todo);
+    // this.ngFirestore.collection('pacientes').doc(id).update(todo)
+    //   .then(() => {
+    //     this.router.navigate(['/pacientes']);
+    //   }).catch(error => console.log(error));;
   }
 
   delete(id: string) {

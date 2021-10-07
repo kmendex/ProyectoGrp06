@@ -10,6 +10,7 @@ import { AddPatientComponent } from './components/crud/add-patient/add-patient.c
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [AddPatientComponent,PatientsListComponent, PatientsViewComponent],
@@ -24,6 +25,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ,ReactiveFormsModule
     ,FormsModule
     ,CommonModule
+    ,RouterModule
   ]
 })
 export class PatientsModule { }

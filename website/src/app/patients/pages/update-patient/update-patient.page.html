@@ -1,4 +1,4 @@
-<!-- <ion-header>
+<ion-header>
   <ion-toolbar>
     <ion-title>Actualizar Paciente</ion-title>
   </ion-toolbar>
@@ -6,11 +6,11 @@
 
 <ion-content class="ion-padding">
 
-  <ion-col>
-    <ion-button class="button" (click)="addPatient()">
-      Atrás
-    </ion-button>
-  </ion-col>
+  <ion-button color="medium"
+    routerLink="/pacientes"
+    routerDirection="forward">
+    Atrás
+  </ion-button>
 
 
   <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
@@ -44,4 +44,4 @@
     </ion-item>
     <ion-button class="ion-margin-top" type="submit" expand="block" color="success">Update</ion-button>
   </form>
-</ion-content> -->
+</ion-content>

@@ -3,6 +3,16 @@ import { ModalController } from '@ionic/angular';
 import { MatTable } from '@angular/material/table';
 import { Patient } from '../../models/patient';
 import { AddPatientComponent } from '../crud/add-patient/add-patient.component';
+import { UpdatePatientComponent } from '../crud/update-patient/update-patient.component';
+
+import { CrudService } from './../../services/crud.service';
+
+export class TODO {
+  $key: string;
+  title: string;
+  description: string;
+}
+
 
 @Component(
   {
@@ -13,6 +23,8 @@ import { AddPatientComponent } from '../crud/add-patient/add-patient.component';
 
 export class PatientsListComponent implements OnInit 
 {
+  Tasks: TODO[];
+
   searchtext='';
 
   patientsData : Patient[] =
@@ -25,7 +37,7 @@ export class PatientsListComponent implements OnInit
   columns: string[] = ['Nombre', 'Dirección', 'Teléfono 1', 'Teléfono 2', 'Actualizar', 'Eliminar'];
   @ViewChild(MatTable) tabla1: MatTable<Patient>;
   
-  constructor(public modalController: ModalController) 
+  constructor(public modalController: ModalController, private crudService: CrudService) 
   { 
 
   }
@@ -49,7 +61,21 @@ export class PatientsListComponent implements OnInit
     this.presentModal()
   }
 
-  ngOnInit() {}
+  // updatePatient(id:any)
+  // {
+  //   this.updateModal()
+  // }
+
+  ngOnInit() {
+    this.crudService.getTasks().subscribe((res) => {
+      this.Tasks = res.map((t) => {
+        return {
+          id: t.payload.doc.id,
+          ...t.payload.doc.data() as TODO
+        };
+      })
+    });
+  }
 
   async presentModal() 
   {
@@ -59,5 +85,28 @@ export class PatientsListComponent implements OnInit
     });
     return await modal.present();
   }
+
+  // async updateModal()
+  // {
+  //   const modal = await this.modalController.create({
+  //     component: UpdatePatientComponent
+  //   });
+  //   return await modal.present();  
+  // }
+
+  todoList() {
+    this.crudService.getTasks()
+    .subscribe((data) => {
+      console.log(data)
+    })
+  }
+
+  remove(id) {
+    console.log(id)
+    if (window.confirm('Are you sure?')) {
+      this.crudService.delete(id)
+    }
+  }  
+
 
 }
