@@ -13,12 +13,8 @@ const routes: Routes = [
     loadChildren: () => import('./home-view/pages/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'pacientes',
-    loadChildren: () => import('./patients/pages/pacientes/pacientes.module').then( m => m.PacientesPageModule)
-  },
-  {
-    path: 'update-patient/:id',
-    loadChildren: () => import('./patients/pages/update-patient/update-patient.module').then( m => m.UpdatePatientPageModule)
+    path: 'list-patient',
+    loadChildren: () => import('./patients/pages/list-patient/list-patient.module').then( m => m.ListPatientPageModule)
   },
   {
     path: 'list-activity/:name',
@@ -27,7 +23,27 @@ const routes: Routes = [
   {
     path: 'view-activity/:id',
     loadChildren: () => import('./patients/pages/view-activity/view-activity.module').then( m => m.ViewActivityPageModule)
-  }
+  },
+  {
+    path: 'view-patient/:id',
+    loadChildren: () => import('./patients/pages/view-patient/view-patient.module').then( m => m.ViewPatientPageModule)
+  },
+  {
+    path: 'add-patient',
+    loadChildren: () => import('./patients/pages/add-patient/add-patient.module').then( m => m.AddPatientPageModule)
+  },
+  {
+    path: 'update-patient/:id',
+    loadChildren: () => import('./patients/pages/update-patient/update-patient.module').then( m => m.UpdatePatientPageModule)
+  },
+
+
+  
+  {
+    path: 'pacientes',
+    loadChildren: () => import('./patients/pages/pacientes/pacientes.module').then( m => m.PacientesPageModule)
+  },
+
 ];
 
 @NgModule({
