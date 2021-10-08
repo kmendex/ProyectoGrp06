@@ -4,19 +4,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { ViewActivityPageRoutingModule } from './view-activity-routing.module';
 
-import { HomePage } from './home.page';
+import { ViewActivityPage } from './view-activity.page';
 import {RouterModule} from '@angular/router';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule,
     ReactiveFormsModule,
-    HomePageRoutingModule
+    RouterModule,
+    ViewActivityPageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [ViewActivityPage]
 })
-export class HomePageModule {}
+export class ViewActivityPageModule {}

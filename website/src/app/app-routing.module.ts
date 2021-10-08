@@ -19,8 +19,15 @@ const routes: Routes = [
   {
     path: 'update-patient/:id',
     loadChildren: () => import('./patients/pages/update-patient/update-patient.module').then( m => m.UpdatePatientPageModule)
+  },
+  {
+    path: 'list-activity/:name',
+    loadChildren: () => import('./patients/pages/list-activity/list-activity.module').then( m => m.ListActivityPageModule)
+  },
+  {
+    path: 'view-activity/:id',
+    loadChildren: () => import('./patients/pages/view-activity/view-activity.module').then( m => m.ViewActivityPageModule)
   }
-
 ];
 
 @NgModule({

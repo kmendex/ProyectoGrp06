@@ -1,6 +1,32 @@
-<ion-grid class="principal"></ion-grid>
-<!-- <ion-content> -->
+<!-- <ion-grid class="principal"></ion-grid> -->
+
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Bienvenido</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content class="ion-padding">
+
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+        <ion-item>
+            <ion-label position="floating">Nombre completo</ion-label>
+            <ion-input formControlName="name" type="text" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input formControlName="pass" type="text" required></ion-input>
+        </ion-item>
+
+        <!-- <button [routerLink]="['/view-activity/', task.id]">
+            <ion-icon name="create" style="zoom:1.5"></ion-icon>
+        </button> -->
+
+        <ion-button class="ion-margin-top" type="submit" expand="block" color="success">Login</ion-button>
 
 
+    </form>
 
-<!-- </ion-content> -->
+</ion-content>

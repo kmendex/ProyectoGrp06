@@ -32,15 +32,28 @@ export class CrudService {
   }
 
   update(id, todo: TODO) {
-    return this.ngFirestore.collection('pacientes').doc(id).update(todo);
-    // this.ngFirestore.collection('pacientes').doc(id).update(todo)
-    //   .then(() => {
-    //     this.router.navigate(['/pacientes']);
-    //   }).catch(error => console.log(error));;
+    //return this.ngFirestore.collection('pacientes').doc(id).update(todo);
+    this.ngFirestore.collection('pacientes').doc(id).update(todo)
+      .then(() => {
+        this.router.navigate(['/pacientes']);
+      }).catch(error => console.log(error));;
   }
 
   delete(id: string) {
     this.ngFirestore.doc('pacientes/' + id).delete();
   }
+
+  // ----------------------------------------------------------------
+
+  getTasksActivitys(name) {
+    return this.ngFirestore.collection('actividades', ref => ref.where('name', '==', name)).snapshotChanges();
+
+  }
+  
+  getTasksActivity(id) {
+    return this.ngFirestore.collection('actividades').doc(id).valueChanges();
+  }
+
+
 
 }
