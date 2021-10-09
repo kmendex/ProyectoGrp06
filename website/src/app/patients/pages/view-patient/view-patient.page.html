@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Informacion de Paciente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+   
+    <ion-item>
+      <ion-label position="floating">Nombre completo</ion-label>
+      <ion-input formControlName="name" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Dirección exacta</ion-label>
+      <ion-input formControlName="address" type="text" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input formControlName="email" type="text" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Número de contacto #1</ion-label>
+      <ion-input formControlName="phoneNumber1" type="text" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Número de contacto #2</ion-label>
+      <ion-input formControlName="phoneNumber2" type="text" required>
+      </ion-input>
+    </ion-item>
+
+  </form>
+</ion-content>

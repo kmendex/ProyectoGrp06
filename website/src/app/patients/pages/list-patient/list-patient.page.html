@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Pacientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-col>
+    <ion-button routerLink='/add-patient'>
+      New
+    </ion-button>
+  </ion-col> 
+
+  <ion-list>
+    <ion-item *ngFor="let task of Tasks" lines="full">
+      
+      <ion-label>
+        <strong>{{task.name}}</strong>
+        <p>{{task.email}}</p>
+      </ion-label>
+
+      <div item-end>
+<!-- 
+        <button [routerLink]="['/list-activity/',task.name]">
+          <ion-icon name="albums-outline"></ion-icon>
+        </button>  -->
+
+        <button [routerLink]="['/view-patient',task.id]">
+          <ion-icon name="eye-outline" style="zoom:1.5"></ion-icon>
+        </button>
+
+        <button [routerLink]="['/update-patient/', task.id]">
+          <ion-icon name="create" style="zoom:1.5"></ion-icon>
+        </button>
+
+        <button (click)="remove(task.id)">
+          <ion-icon name="trash" style="zoom:1.5"></ion-icon>
+        </button>
+
+      </div>
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+
+
+
+  <!-- <ion-col>
+    <ion-button class="button" (click)="addPatient()">
+      New
+    </ion-button>
+  </ion-col> -->
