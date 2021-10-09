@@ -4,8 +4,9 @@ import { CrudService } from './../../services/crud.service';
 
 export class TODO {
   $key: string;
-  title: string;
-  description: string;
+  name: string;
+  email: string;
+  id: string;
 }
 
 @Component({

@@ -1,12 +1,40 @@
+
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ionic Video Player
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h4>Play Offline Video</h4>
+  <ion-button expand="full" fill="outline" (click)="playLocalVideo()">Offline Video</ion-button>
+
+
+  <h4>Play Online Video</h4>
+  <ion-button expand="full" fill="outline" (click)="playRemoteVideo()">Online Video</ion-button>
+
+
+  <h4>Close Player</h4>
+  <ion-button expand="full" fill="outline" (click)="closeVideo()">Stop Video</ion-button>
+</ion-content> -->
+
+
+
+
+
 <ion-header>
   <ion-toolbar>
     <ion-title>Actividad de Paciente</ion-title>
   </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content class="ion-padding">
 
-  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="editForm"">
    
     <ion-item>
       <ion-label position="floating">Titulo</ion-label>
