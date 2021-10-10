@@ -2,7 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 import { VgApiService, VgMediaDirective } from '@videogular/ngx-videogular/core';
 
 //https://www.ionicanddjangotutorial.com/how-to-use-videogular2-with-ionic5/
-
+//npx cap add android
+//npx cap sync
+//npx cap update
+//npx cap run android
 @Component({
   selector: 'app-view-video',
   templateUrl: './view-video.page.html',
