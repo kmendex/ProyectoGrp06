@@ -30,9 +30,21 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let v of videos">
+      <ion-avatar slot="start">
+        <img [src]="v.thumb" />
+      </ion-avatar>
+      <ion-label>{{v.title}}</ion-label>
+      <ion-button slot="end" fill="clean" size="large">
+        <ion-icon name="play-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
 
-
-<ion-content class="ion-padding">
+<!-- <ion-content class="ion-padding">
 
   <form [formGroup]="editForm"">
    
@@ -53,5 +65,6 @@
       </ion-input>
     </ion-item>
 
+
   </form>
-</ion-content>
+</ion-content> -->
