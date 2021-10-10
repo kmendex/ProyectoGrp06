@@ -7,39 +7,18 @@ export class TODO {
   title: string;
   description: string;
 }
-export interface Video {
-  title: string;
-  url: string;
-  thumb: string;
-  subtitle: string;
-}
+
 @Injectable({
   providedIn: 'root'
 })
 
 export class CrudService {
-  private videos: Video[] = [
-    {
-      url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      subtitle: "By Blender Foundation",
-      thumb: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
-      title: "Big Buck Bunny"
-    },
-    {
-      url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      subtitle: "By Blender Foundation",
-      thumb: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
-      title: "Elephant Dream"
-    }
-  ];
+
   constructor(
     private ngFirestore: AngularFirestore,
     private router: Router
   ) { }
-  public getVidoes(): Video[] {
-    return this.videos;
-  }
-
+  
   create(todo: TODO) {
     return this.ngFirestore.collection('pacientes').add(todo);
   }
@@ -56,7 +35,7 @@ export class CrudService {
     //return this.ngFirestore.collection('pacientes').doc(id).update(todo);
     this.ngFirestore.collection('pacientes').doc(id).update(todo)
       .then(() => {
-        this.router.navigate(['/pacientes']);
+        this.router.navigate(['/list-patient']);
       }).catch(error => console.log(error));;
   }
 

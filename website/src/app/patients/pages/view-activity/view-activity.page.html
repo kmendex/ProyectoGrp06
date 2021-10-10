@@ -1,52 +1,12 @@
-
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Ionic Video Player
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <h4>Play Offline Video</h4>
-  <ion-button expand="full" fill="outline" (click)="playLocalVideo()">Offline Video</ion-button>
-
-
-  <h4>Play Online Video</h4>
-  <ion-button expand="full" fill="outline" (click)="playRemoteVideo()">Online Video</ion-button>
-
-
-  <h4>Close Player</h4>
-  <ion-button expand="full" fill="outline" (click)="closeVideo()">Stop Video</ion-button>
-</ion-content> -->
-
-
-
-
-
 <ion-header>
   <ion-toolbar>
     <ion-title>Actividad de Paciente</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-list>
-    <ion-item *ngFor="let v of videos">
-      <ion-avatar slot="start">
-        <img [src]="v.thumb" />
-      </ion-avatar>
-      <ion-label>{{v.title}}</ion-label>
-      <ion-button slot="end" fill="clean" size="large">
-        <ion-icon name="play-circle-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-  </ion-list>
-</ion-content>
+<ion-content class="ion-padding">
 
-<!-- <ion-content class="ion-padding">
-
-  <form [formGroup]="editForm"">
+  <form [formGroup]="editForm">
    
     <ion-item>
       <ion-label position="floating">Titulo</ion-label>
@@ -61,10 +21,13 @@
 
     <ion-item>
       <ion-label position="floating">Descripcion de la actividad</ion-label>
-      <ion-input formControlName="description" type="text" required>
-      </ion-input>
+      <ion-input formControlName="description" type="text" required></ion-input>
     </ion-item>
 
 
   </form>
-</ion-content> -->
+</ion-content>
+
+
+
+

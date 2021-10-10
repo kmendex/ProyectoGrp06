@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'pacientes',
     loadChildren: () => import('./patients/pages/pacientes/pacientes.module').then( m => m.PacientesPageModule)
   },
+  {
+    path: 'view-video',
+    loadChildren: () => import('./patients/pages/view-video/view-video.module').then( m => m.ViewVideoPageModule)
+  },
 
 ];
 
