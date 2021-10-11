@@ -24,6 +24,14 @@ const routes: Routes = [
     path: 'view-activity/:id',
     loadChildren: () => import('./patients/pages/view-activity/view-activity.module').then( m => m.ViewActivityPageModule)
   },
+  // {
+  //   path: 'view-video/:url',
+  //   loadChildren: () => import('./patients/pages/view-video/view-video.module').then( m => m.ViewVideoPageModule)
+  // },
+  {
+    path: 'view-video',
+    loadChildren: () => import('./patients/pages/view-video/view-video.module').then( m => m.ViewVideoPageModule)
+  },
   {
     path: 'view-patient/:id',
     loadChildren: () => import('./patients/pages/view-patient/view-patient.module').then( m => m.ViewPatientPageModule)
@@ -43,10 +51,7 @@ const routes: Routes = [
     path: 'pacientes',
     loadChildren: () => import('./patients/pages/pacientes/pacientes.module').then( m => m.PacientesPageModule)
   },
-  {
-    path: 'view-video',
-    loadChildren: () => import('./patients/pages/view-video/view-video.module').then( m => m.ViewVideoPageModule)
-  },
+
 
 ];
 

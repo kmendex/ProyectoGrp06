@@ -1,8 +1,13 @@
-ionic cordova plugin add cordova-plugin-splashscreen
-npm install @ionic-native/splash-screen
+##
+## Hacer estos comandos en la terminal como administrador.
+##
 
-ionic cordova plugin add cordova-plugin-statusbar
-npm install @ionic-native/status-bar
+## Comandos para correr la app en un emulador de android
+## Hacerlo cada vez que se desee ver los cambios
+ionic capacitor sync
+ionic build
+ionic capacitor copy
+ionic capacitor run android
 
-ionic cordova plugin add https://github.com/moust/cordova-plugin-videoplayer.git
-npm install @ionic-native/video-player
+## Comando para correrlo en el navegador
+ionic serve

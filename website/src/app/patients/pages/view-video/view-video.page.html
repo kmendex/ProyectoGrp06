@@ -5,6 +5,10 @@
 </ion-header>
 
 <ion-content padding>
+
+
+
+
   <div class="videoplayer">
     <vg-player (onPlayerReady)="onPlayerReady($event)">
       <video class="videoplayer" [vgMedia]="media" #media id="singleVideo" preload="auto" controls crossorigin>
@@ -12,7 +16,7 @@
       </video>
     </vg-player>
   </div>
-  <ion-grid class="ion-no-padding">
+  <!-- <ion-grid class="ion-no-padding">
     <ion-row class="ion-padding">
       <ion-col *ngFor="let item of items" size="4" class="ion-padding">
         <div class="module">
@@ -26,5 +30,8 @@
         </div>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
 </ion-content>
+
+  <!-- <iframe src="https://drive.google.com/drive/u/1/folders/1PC5hKMapcJodsjoaQqFa8b5WjIAxSFpJ" frameborder="0" target="_parent">
+  </iframe> -->

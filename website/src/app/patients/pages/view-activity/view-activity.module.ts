@@ -9,6 +9,11 @@ import { ViewActivityPageRoutingModule } from './view-activity-routing.module';
 import { ViewActivityPage } from './view-activity.page';
 import {RouterModule} from '@angular/router';
 
+import { VgCoreModule } from '@videogular/ngx-videogular/core';
+import { VgControlsModule } from '@videogular/ngx-videogular/controls';
+import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
+import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -16,7 +21,11 @@ import {RouterModule} from '@angular/router';
     IonicModule,
     ReactiveFormsModule,
     RouterModule,
-    ViewActivityPageRoutingModule
+    ViewActivityPageRoutingModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule
   ],
   declarations: [ViewActivityPage]
 })
