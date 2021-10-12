@@ -7,6 +7,7 @@ export class TODO {
   name: string;
   email: string;
   id: string;
+  tipo: string;
 }
 
 @Component({
@@ -17,6 +18,7 @@ export class TODO {
 
 export class ListPatientPage implements OnInit 
 {
+  tipo: string;
   Tasks: TODO[];
 
   constructor(public modalController: ModalController, private crudService: CrudService) { }
@@ -39,9 +41,27 @@ export class ListPatientPage implements OnInit
     }
   }  
 
+
 }
 
 
+
+
+
+
+  // setTipo(){
+  //   this.tipo = this.Tasks[0].tipo
+  //   console.log(this.tipo)
+  // }
+  // sleep(milliseconds) {
+  //   const date = Date.now();
+  //   let currentDate = null;
+  //   do {
+  //     currentDate = Date.now();
+  //   } while (currentDate - date < milliseconds);
+  // }
+
+    //this.sleep(3000);
 
 
 

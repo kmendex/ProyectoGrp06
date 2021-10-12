@@ -6,12 +6,6 @@
 
 <ion-content>
 
-  <ion-col>
-    <ion-button routerLink='/add-patient'>
-      New
-    </ion-button>
-  </ion-col> 
-
   <ion-list>
     <ion-item *ngFor="let task of Tasks" lines="full">
       
@@ -39,9 +33,25 @@
     </ion-item>
   </ion-list>
 
+  <ion-col>
+    <ion-button routerLink='/add-patient'>
+      Nuevo
+    </ion-button>
+  </ion-col> 
+
 </ion-content>
 
 
+
+
+
+        <!-- *ngIf="{tipo:'fisioterapeuta'}" -->
+
+
+
+
+<!-- 
+  <ion-button (click)="setTipo()">Empezar</ion-button> -->
 
 
 

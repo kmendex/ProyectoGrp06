@@ -1,3 +1,6 @@
+ionic build prod
+npx cap init
+ionic capacitor add android
 ##
 ## Hacer estos comandos en la terminal como administrador.
 ##

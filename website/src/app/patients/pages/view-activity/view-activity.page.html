@@ -6,7 +6,7 @@
 
 <ion-content class="ion-padding">
 
-  <form [formGroup]="editForm" (ngSubmit)="run()">
+  <form [formGroup]="editForm">
 
     <ion-item>
       <ion-label position="floating">Titulo</ion-label>
@@ -24,47 +24,25 @@
       <ion-input formControlName="description" type="text" required></ion-input>
     </ion-item>
 
-    <div>
-      <vg-player *ngIf="urlVideo" (onPlayerReady)="onPlayerReady()">
-        <video [vgMedia]="media" #media id="singleVideo" preload="auto" controls crossorigin>
-          <source *ngIf="urlVideo" [src]="urlVideo" type="video/mp4">
-        </video>
-      </vg-player>
-    </div>
+    <vg-player *ngIf="videoUrl">
+      <iframe width="1440" height="290"
+      [src]="videoUrl" frameborder="0" allowfullscreen>
+      </iframe>
+    </vg-player>
 
   </form>
 
-
-
   <ion-button (click)="run()">Video de la actividad</ion-button>
-  <ion-input type="text">{{urlVideo}}</ion-input>
   
-  <!-- <button [routerLink]={{url}}>
-    <ion-icon name="eye-outline" style="zoom:1.5"></ion-icon>
-  </button> -->
-
-  <!-- 
-    
-    *ngIf="urlVideo"
-    
-    
-    <ion-list>
-    <ion-item *ngFor="let task of Tasks" lines="full">
-      <ion-label>
-        <strong>{{task.url}}</strong>
-      </ion-label>
-
-      <div item-end>
-        <button [routerLink]="['/view-video',task.url]">
-          <ion-icon name="eye-outline" style="zoom:1.5"></ion-icon>
-        </button>
-
-      </div>
-    </ion-item>
-  </ion-list> -->
-  
-    
-
-
-
 </ion-content>
+
+
+  <!-- <ion-input type="text">{{urlVideo}}</ion-input> -->
+
+    <!-- <div>
+      <vg-player *ngIf="urlVideo">
+        <video [vgMedia]="media" #media id="singleVideo" preload="auto" controls crossorigin>
+          <source [src]="urlVideo" type="video/mp4">
+        </video>
+      </vg-player>
+    </div> -->

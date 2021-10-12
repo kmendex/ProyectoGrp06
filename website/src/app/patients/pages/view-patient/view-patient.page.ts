@@ -12,6 +12,7 @@ export class ViewPatientPage implements OnInit {
 
   editForm: FormGroup;
   id: any;
+  png:string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -25,7 +26,8 @@ export class ViewPatientPage implements OnInit {
         address: [data['address']],
         email: [data['email']],
         phoneNumber1: [data['phoneNumber1']],
-        phoneNumber2: [data['phoneNumber2']]
+        phoneNumber2: [data['phoneNumber2']],
+        png: [data['png']]
       })
     });
   }
@@ -37,8 +39,13 @@ export class ViewPatientPage implements OnInit {
       address: [''],
       email: [''],
       phoneNumber1: [''],
-      phoneNumber2: ['']
+      phoneNumber2: [''],
+      png: ['']
     })
+  }
+
+  setPng(){
+    this.png = this.editForm.value.png
   }
 
 }

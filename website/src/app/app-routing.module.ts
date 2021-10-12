@@ -24,10 +24,6 @@ const routes: Routes = [
     path: 'view-activity/:id',
     loadChildren: () => import('./patients/pages/view-activity/view-activity.module').then( m => m.ViewActivityPageModule)
   },
-  // {
-  //   path: 'view-video/:url',
-  //   loadChildren: () => import('./patients/pages/view-video/view-video.module').then( m => m.ViewVideoPageModule)
-  // },
   {
     path: 'view-video',
     loadChildren: () => import('./patients/pages/view-video/view-video.module').then( m => m.ViewVideoPageModule)

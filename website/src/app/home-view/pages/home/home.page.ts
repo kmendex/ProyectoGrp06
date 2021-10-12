@@ -20,6 +20,7 @@ export class HomePage implements OnInit {
   editForm: FormGroup;
   name: any;
   pass: any;
+  flag: any;
 
   constructor(public formBuilder: FormBuilder, private crudService: CrudService, private router: Router) { 
     // this.crudService.getTasks().subscribe((data) => {
@@ -55,14 +56,27 @@ export class HomePage implements OnInit {
     {
       if (this.Tasks[i].name == this.editForm.value.name && this.Tasks[i].pass == this.editForm.value.pass) {
         this.router.navigate(['/list-activity/'+this.Tasks[i].name]);
-        //this.crudService.getTasksActivitys(this.Tasks[i].id)
+        this.flag = 0
       }
+    }
+
+    if (this.flag != 0) {
+      this.router.navigate(['/list-patient']);
+    } else {
+      this.flag = 1
     }
 
   }
 
 
 }
+
+
+
+
+//this.crudService.getTasksActivitys(this.Tasks[i].id)
+
+
 
 
 
