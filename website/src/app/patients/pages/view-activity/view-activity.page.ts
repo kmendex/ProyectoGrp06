@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
 import { CrudService } from './../../services/crud.service';
 import { VgApiService, VgMediaDirective } from '@videogular/ngx-videogular/core';
 import { Router } from "@angular/router";
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 
 export class TODO {
@@ -18,8 +19,8 @@ export class TODO {
 })
 export class ViewActivityPage implements OnInit {
 
-  @ViewChild(VgMediaDirective, { static: true }) media: VgMediaDirective;
-  api:VgApiService;
+  //@ViewChild(VgMediaDirective, { static: true }) media: VgMediaDirective;
+  //api:VgApiService;
   urlVideo:string=""
 
   url:any
@@ -42,6 +43,8 @@ export class ViewActivityPage implements OnInit {
     this.crudService.getTasksActivity(this.id).subscribe((data) => {
       this.url = [data['url']]
     });
+
+    //this.urlVideo = this.url[0]
 
   }
 
@@ -80,7 +83,7 @@ export class ViewActivityPage implements OnInit {
 
     this.ruta = this.url[0]
     console.log(this.url[0])
-
+    this.urlVideo = this.url[0]
     //console.log(this.editForm.value.url)
     //this.url = this.editForm.value.url
 
@@ -93,15 +96,25 @@ export class ViewActivityPage implements OnInit {
     //this.router.navigate([this.ruta]);
     // this.urlVideo = this.editForm.value.url
   }
-  onPlayerReady(api:VgApiService){
-    this.api = api
+  sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+      currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+  }
+  onPlayerReady(){
+    this.sleep(3000);
+    //setTimeout(() => {  console.log("World!"); }, 10000);
+    //this.api = api
     //this.run()
     //console.log(this.editForm.value.url)
-    if( this.url === undefined){
-      this.urlVideo = "http://static.videogular.com/assets/videos/videogular.mp4"
-    } else {
-      this.urlVideo = this.url[0]
-    }
+    this.urlVideo = this.url[0]
+    // if( this.urlVideo === ""){
+    //   this.urlVideo = "http://static.videogular.com/assets/videos/videogular.mp4"
+    // } else {
+    //   console.log(this.urlVideo)
+    // }
     // this.api.fsAPI.toggleFullscreen()
   }
 
