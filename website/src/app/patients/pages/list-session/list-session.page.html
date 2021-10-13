@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de sesiones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-searchbar showcancelbutton="" (ionInput)="filterList($event)"></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let task of Tasks" lines="full">
+      
+      <ion-label>
+        <strong>{{task.fisioterapeuta}}</strong>
+        <p>{{task.description}}</p>
+      </ion-label>
+
+      <div item-end>
+
+        <button [routerLink]="['/view-session',task.id]">
+          <ion-icon name="eye-outline" style="zoom:1.5"></ion-icon>
+        </button>
+
+
+
+      </div>
+
+    </ion-item>
+  </ion-list>
+
+
+
+</ion-content>
+
+
+        <!-- <button [routerLink]="['/update-patient/', task.id]">
+          <ion-icon name="create" style="zoom:1.5"></ion-icon>
+        </button>
+
+        <button (click)="remove(task.id)">
+          <ion-icon name="trash" style="zoom:1.5"></ion-icon>
+        </button> p-->
+
+
+
+          <!-- <ion-col>
+    <ion-button routerLink='/add-patient'>
+      Nuevo
+    </ion-button>
+  </ion-col>  -->

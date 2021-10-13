@@ -4,20 +4,17 @@ import { CrudService } from './../../services/crud.service';
 
 export class TODO {
   $key: string;
-  name: string;
-  email: string;
+  description: string;
+  fisioterapeuta: string;
   id: string;
-  tipo: string;
 }
-
 @Component({
-  selector: 'app-list-patient',
-  templateUrl: './list-patient.page.html',
-  styleUrls: ['./list-patient.page.scss'],
+  selector: 'app-list-session',
+  templateUrl: './list-session.page.html',
+  styleUrls: ['./list-session.page.scss'],
 })
+export class ListSessionPage implements OnInit {
 
-export class ListPatientPage implements OnInit 
-{
   tipo: string;
   Tasks: TODO[];
   Tasks_backup: TODO[];
@@ -25,7 +22,7 @@ export class ListPatientPage implements OnInit
   constructor(public modalController: ModalController, private crudService: CrudService) { }
   
   async ngOnInit() {
-    this.crudService.getTasks().subscribe((res) => {
+    this.crudService.getTasksSessions().subscribe((res) => {
       this.Tasks = res.map((t) => {
         return {
           id: t.payload.doc.id,
@@ -34,7 +31,7 @@ export class ListPatientPage implements OnInit
       })
     });
 
-    this.crudService.getTasks().subscribe((res) => {
+    this.crudService.getTasksSessions().subscribe((res) => {
       this.Tasks_backup = res.map((t) => {
         return {
           id: t.payload.doc.id,
@@ -64,45 +61,12 @@ export class ListPatientPage implements OnInit
     }
   
     this.Tasks = this.Tasks.filter(current => {
-      if (current.name && searchTerm) {
-        return (current.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1);
+      if (current.fisioterapeuta && searchTerm) {
+        return (current.fisioterapeuta.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1);
       }
     });
 
 
 
   }
-
-
 }
-
-
-
-
-
-
-  // setTipo(){
-  //   this.tipo = this.Tasks[0].tipo
-  //   console.log(this.tipo)
-  // }
-  // sleep(milliseconds) {
-  //   const date = Date.now();
-  //   let currentDate = null;
-  //   do {
-  //     currentDate = Date.now();
-  //   } while (currentDate - date < milliseconds);
-  // }
-
-    //this.sleep(3000);
-
-
-
-
-
-  
-  // todoList() {
-  //   this.crudService.getTasks()
-  //   .subscribe((data) => {
-  //     console.log(data)
-  //   })
-  // }

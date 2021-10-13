@@ -24,7 +24,8 @@ export class AddPatientPage implements OnInit {
       address: [''],
       email: [''],
       phoneNumber1: [''],
-      phoneNumber2: ['']
+      phoneNumber2: [''],
+      png: ['']
     })
   }
 

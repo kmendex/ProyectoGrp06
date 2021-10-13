@@ -54,6 +54,12 @@ export class CrudService {
     return this.ngFirestore.collection('actividades').doc(id).valueChanges();
   }
 
+  getTasksSessions() {
+    return this.ngFirestore.collection('sesiones').snapshotChanges();
+  }
 
+  getTaskSession(id) {
+    return this.ngFirestore.collection('sesiones').doc(id).valueChanges();
+  }
 
 }

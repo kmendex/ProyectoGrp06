@@ -47,6 +47,14 @@ const routes: Routes = [
     path: 'pacientes',
     loadChildren: () => import('./patients/pages/pacientes/pacientes.module').then( m => m.PacientesPageModule)
   },
+  {
+    path: 'view-session/:id',
+    loadChildren: () => import('./patients/pages/view-session/view-session.module').then( m => m.ViewSessionPageModule)
+  },
+  {
+    path: 'list-session',
+    loadChildren: () => import('./patients/pages/list-session/list-session.module').then( m => m.ListSessionPageModule)
+  }
 
 
 ];
