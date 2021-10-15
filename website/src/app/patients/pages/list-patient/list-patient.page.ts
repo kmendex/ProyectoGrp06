@@ -59,7 +59,7 @@ export class ListPatientPage implements OnInit
 
   remove(id) {
     console.log(id)
-    if (window.confirm('Are you sure?')) {
+    if (window.confirm('Estas seguro de que quieres eliminar este paciente?')) {
       this.crudService.delete(id)
     }
   }  
@@ -90,6 +90,15 @@ export class ListPatientPage implements OnInit
       this.slider = this.sliderConfig
     }
   }
+
+
+  accion() {
+    var ancla = document.getElementsByClassName('nav-enlace');
+    for (var i = 0; i < ancla.length; i++) {
+      ancla[i].classList.toggle('desaparece')
+    }
+  }
+
 }
 
 

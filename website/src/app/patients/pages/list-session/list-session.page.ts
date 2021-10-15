@@ -29,6 +29,7 @@ export class ListSessionPage implements OnInit {
     centeredSlides: false
   };
   slider = this.sliderConfigWeb
+  Tasks_result: TODO[];
 
   constructor(public modalController: ModalController, private crudService: CrudService) { }
   
@@ -85,4 +86,23 @@ export class ListSessionPage implements OnInit {
       this.slider = this.sliderConfig
     }
   }
+
+  accion() {
+    var ancla = document.getElementsByClassName('nav-enlace');
+    for (var i = 0; i < ancla.length; i++) {
+      ancla[i].classList.toggle('desaparece')
+    }
+  }
+
+  close(id) {
+    this.Tasks_result = []
+    if (window.confirm('Estas seguro de que quieres desabilitar esta session?')) {
+      for (var i = 0; i < this.Tasks.length; i++) {
+        if (this.Tasks[i].id != id){
+          this.Tasks_result.push(this.Tasks[i])
+        }
+      }
+      this.Tasks = this.Tasks_result
+    }
+  }  
 }

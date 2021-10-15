@@ -6,6 +6,13 @@
 
 <ion-content>
 
+  <ion-col>
+    <ion-button class="nav-boton" (click)="accion()" expand="block" color="success">Menu</ion-button>
+    <ion-button (click)="changeView()" class="nav-enlace ion-margin-top" expand="block" color="success">
+      Cambiar vista
+    </ion-button>
+  </ion-col>
+
   <ion-searchbar showcancelbutton="" (ionInput)="filterList($event)"></ion-searchbar>
 
   <!-- <ion-list>
@@ -37,6 +44,10 @@
                 <ion-icon name="eye-outline" style="zoom:1.5"></ion-icon>
               </button>
 
+              <button (click)="close(task.id)">
+                <ion-icon name="close"></ion-icon>
+              </button>
+
             </ion-card-content>
           </ion-card>
 
@@ -50,11 +61,7 @@
   <!-- </ion-item>
   </ion-list> -->
 
-  <ion-col>
-    <ion-button (click)="changeView()" class="ion-margin-top" expand="block" color="success">
-      Cambiar vista
-    </ion-button>
-  </ion-col>
+
 
 </ion-content>
 

@@ -5,7 +5,17 @@
 </ion-header>
 
 <ion-content>
-
+  
+  <ion-col>
+    <ion-button class="nav-boton" (click)="accion()" expand="block" color="success">Menu</ion-button>
+    <ion-button routerLink='/add-patient' class="nav-enlace desaparece" expand="block" color="success">
+      Nuevo paciente
+    </ion-button>
+    <ion-button (click)="changeView()" class="nav-enlace desaparece" expand="block" color="success">
+      Cambiar vista
+    </ion-button>
+  </ion-col>
+  
   <ion-searchbar showcancelbutton="" (ionInput)="filterList($event)"></ion-searchbar>
 
   <!-- <ion-list>
@@ -47,6 +57,7 @@
               </button>
 
             </ion-card-content>
+
           </ion-card>
 
           <!-- </div> -->
@@ -58,14 +69,7 @@
   <!-- </ion-item>
   </ion-list> -->
 
-  <ion-col>
-    <ion-button routerLink='/add-patient' class="ion-margin-top" expand="block" color="success">
-      Nuevo
-    </ion-button>
-    <ion-button (click)="changeView()" class="ion-margin-top" expand="block" color="success">
-      Cambiar vista
-    </ion-button>
-  </ion-col>
+
 
 </ion-content>
 
