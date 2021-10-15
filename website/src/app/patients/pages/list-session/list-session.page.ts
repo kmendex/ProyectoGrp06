@@ -18,6 +18,17 @@ export class ListSessionPage implements OnInit {
   tipo: string;
   Tasks: TODO[];
   Tasks_backup: TODO[];
+  sliderConfig = {
+    slidesPerView: 1.6,
+    spaceBetween: 10,
+    centeredSlides: true
+  };
+  sliderConfigWeb = {
+    slidesPerView: 6.6,
+    spaceBetween: 10,
+    centeredSlides: false
+  };
+  slider = this.sliderConfigWeb
 
   constructor(public modalController: ModalController, private crudService: CrudService) { }
   
@@ -65,8 +76,13 @@ export class ListSessionPage implements OnInit {
         return (current.fisioterapeuta.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1);
       }
     });
+  }
 
-
-
+  changeView(){
+    if(this.slider === this.sliderConfig){
+      this.slider = this.sliderConfigWeb
+    } else{
+      this.slider = this.sliderConfig
+    }
   }
 }

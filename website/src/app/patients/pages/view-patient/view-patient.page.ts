@@ -49,3 +49,25 @@ export class ViewPatientPage implements OnInit {
   }
 
 }
+
+
+
+// setTask(){
+//   var Tasks = /** @class */ (function () {
+//       function Task() {
+//           this.age = 0;
+//       }
+//       return Profile;
+//   }());
+
+// // let myArray = [];
+// // let commentData = {} as Dish;
+// // commentData.id = 3;
+// // commentData.name = 'something';
+// // myArray.push(commentData);
+//   this.Task[0].name = this.editForm.value.name
+//   this.Task[0].address = this.editForm.value.address
+//   this.Task[0].phoneNumber1 = this.editForm.value.phoneNumber1
+//   this.Task[0].phoneNumber2 = this.editForm.value.phoneNumber2
+//   this.Task[0].png = this.editForm.value.png
+// }

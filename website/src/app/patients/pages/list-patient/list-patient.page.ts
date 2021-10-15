@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { CrudService } from './../../services/crud.service';
-
+import { FormGroup, FormBuilder } from "@angular/forms";
 export class TODO {
   $key: string;
   name: string;
   email: string;
   id: string;
-  tipo: string;
+  png: string;
 }
 
 @Component({
@@ -18,11 +18,24 @@ export class TODO {
 
 export class ListPatientPage implements OnInit 
 {
-  tipo: string;
   Tasks: TODO[];
   Tasks_backup: TODO[];
+  sliderConfig = {
+    slidesPerView: 1.6,
+    spaceBetween: 10,
+    centeredSlides: true
+  };
+  sliderConfigWeb = {
+    slidesPerView: 8.6,
+    spaceBetween: 10,
+    centeredSlides: false
+  };
+  slider = this.sliderConfigWeb
 
-  constructor(public modalController: ModalController, private crudService: CrudService) { }
+  constructor(
+    public modalController: ModalController, 
+    private crudService: CrudService
+    ) { }
   
   async ngOnInit() {
     this.crudService.getTasks().subscribe((res) => {
@@ -68,12 +81,15 @@ export class ListPatientPage implements OnInit
         return (current.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1);
       }
     });
-
-
-
   }
 
-
+  changeView(){
+    if(this.slider === this.sliderConfig){
+      this.slider = this.sliderConfigWeb
+    } else{
+      this.slider = this.sliderConfig
+    }
+  }
 }
 
 
