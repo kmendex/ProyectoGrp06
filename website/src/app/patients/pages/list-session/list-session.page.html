@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de sesiones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-col>
+    <ion-button class="nav-boton" (click)="accion()" expand="block" color="success">Menu</ion-button>
+    <ion-button (click)="changeView()" class="nav-enlace ion-margin-top" expand="block" color="success">
+      Cambiar vista
+    </ion-button>
+  </ion-col>
+
+  <ion-searchbar showcancelbutton="" (ionInput)="filterList($event)"></ion-searchbar>
+
+  <!-- <ion-list>
+    <ion-item *ngFor="let task of Tasks" lines="full"> -->
+
+  <div class="category-block">
+    <ion-slides [options]="slider">
+      <ion-slide *ngFor="let task of Tasks">
+        <div>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+
+                <img [src]="task.png" width="400" height="400"class="img-fluid" />
+
+
+                <ion-label>
+                  <strong>{{task.fisioterapeuta}}</strong>
+                  <p>{{task.description}}</p>
+                </ion-label>
+
+              </ion-card-title>
+            </ion-card-header>
+
+            <!-- <div item-end> -->
+            <ion-card-content>
+
+              <button [routerLink]="['/view-session',task.id]">
+                <ion-icon name="eye-outline" style="zoom:1.5"></ion-icon>
+              </button>
+
+              <button (click)="close(task.id)">
+                <ion-icon name="close"></ion-icon>
+              </button>
+
+            </ion-card-content>
+          </ion-card>
+
+          <!-- </div> -->
+
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <!-- </ion-item>
+  </ion-list> -->
+
+
+
+</ion-content>
+
+
+<!-- <button [routerLink]="['/update-patient/', task.id]">
+          <ion-icon name="create" style="zoom:1.5"></ion-icon>
+        </button>
+
+        <button (click)="remove(task.id)">
+          <ion-icon name="trash" style="zoom:1.5"></ion-icon>
+        </button> p-->
+
+
+
+<!-- <ion-col>
+    <ion-button routerLink='/add-patient'>
+      Nuevo
+    </ion-button>
+  </ion-col>  -->

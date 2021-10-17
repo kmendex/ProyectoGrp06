@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Pacientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-col>
+    <ion-button class="nav-boton" (click)="accion()" expand="block" color="success">Menu</ion-button>
+    <ion-button routerLink='/add-patient' class="nav-enlace desaparece" expand="block" color="success">
+      Nuevo paciente
+    </ion-button>
+    <ion-button (click)="changeView()" class="nav-enlace desaparece" expand="block" color="success">
+      Cambiar vista
+    </ion-button>
+  </ion-col>
+  
+  <ion-searchbar showcancelbutton="" (ionInput)="filterList($event)"></ion-searchbar>
+
+  <!-- <ion-list>
+    <ion-item *ngFor="let task of Tasks" lines="full"> -->
+
+  <div class="category-block">
+    <ion-slides [options]="slider">
+      <ion-slide *ngFor="let task of Tasks">
+        <div>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+
+                <img [src]="task.png" width="400" height="400"class="img-fluid" />
+
+                <ion-label>
+                  <strong>{{task.name}}</strong>
+                  <p>{{task.email}}</p>
+                </ion-label>
+
+              </ion-card-title>
+            </ion-card-header>
+
+
+            <!-- <div item-end> -->
+
+            <ion-card-content>
+              
+              <button [routerLink]="['/view-patient',task.id]">
+                <ion-icon name="eye-outline" style="zoom:1.5"></ion-icon>
+              </button>
+
+              <button [routerLink]="['/update-patient', task.id]">
+                <ion-icon name="create" style="zoom:1.5"></ion-icon>
+              </button>
+
+              <button (click)="remove(task.id)">
+                <ion-icon name="trash" style="zoom:1.5"></ion-icon>
+              </button>
+
+            </ion-card-content>
+
+          </ion-card>
+
+          <!-- </div> -->
+
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <!-- </ion-item>
+  </ion-list> -->
+
+
+
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+<!-- *ngIf="{tipo:'fisioterapeuta'}" -->
+
+
+
+
+<!-- 
+  <ion-button (click)="setTipo()">Empezar</ion-button> -->
+
+
+
+
+<!-- 
+        <button [routerLink]="['/list-activity/',task.name]">
+          <ion-icon name="albums-outline"></ion-icon>
+        </button>  -->
+
+
+<!-- <ion-col>
+    <ion-button class="button" (click)="addPatient()">
+      New
+    </ion-button>
+  </ion-col> -->

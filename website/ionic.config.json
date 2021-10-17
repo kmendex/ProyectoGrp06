@@ -1,5 +1,8 @@
 {
   "name": "website",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }

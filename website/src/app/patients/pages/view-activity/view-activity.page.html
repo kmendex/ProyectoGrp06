@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Actividad de Paciente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <form [formGroup]="editForm">
+
+    <ion-item>
+      <ion-label position="floating">Titulo</ion-label>
+      <ion-input formControlName="title" type="text" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nombre completo</ion-label>
+      <ion-input formControlName="name" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descripcion de la actividad</ion-label>
+      <ion-input formControlName="description" type="text" required></ion-input>
+    </ion-item>
+
+    <vg-player *ngIf="videoUrl">
+      <iframe width="1440" height="290"
+      [src]="videoUrl" frameborder="0" allowfullscreen>
+      </iframe>
+    </vg-player>
+
+  </form>
+
+  <ion-button (click)="run()">Video de la actividad</ion-button>
+  
+</ion-content>
+
+
+  <!-- <ion-input type="text">{{urlVideo}}</ion-input> -->
+
+    <!-- <div>
+      <vg-player *ngIf="urlVideo">
+        <video [vgMedia]="media" #media id="singleVideo" preload="auto" controls crossorigin>
+          <source [src]="urlVideo" type="video/mp4">
+        </video>
+      </vg-player>
+    </div> -->
