@@ -1,0 +1,7 @@
+{
+  "name": "parej-website",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
