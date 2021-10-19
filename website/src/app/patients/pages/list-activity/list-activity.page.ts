@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from './../../services/crud.service';
-import { Router, ActivatedRoute } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 export class TODO {
   $key: string;
@@ -14,13 +14,26 @@ export class TODO {
   templateUrl: './list-activity.page.html',
   styleUrls: ['./list-activity.page.scss'],
 })
-export class ListActivityPage implements OnInit {
-
+export class ListActivityPage implements OnInit 
+{
   Tasks: TODO[];
-
   id: any;
+  sliderConfig = {
+    slidesPerView: 1.6,
+    spaceBetween: 10,
+    centeredSlides: true
+  };
+  sliderConfigWeb = {
+    slidesPerView: 8.6,
+    spaceBetween: 10,
+    centeredSlides: false
+  };
+  slider = this.sliderConfigWeb
 
-  constructor(private crudService: CrudService,private activatedRoute: ActivatedRoute,) { 
+  constructor(
+    private crudService: CrudService,
+    private activatedRoute: ActivatedRoute
+    ) { 
 
     this.id = this.activatedRoute.snapshot.paramMap.get('name');
 
@@ -35,6 +48,21 @@ export class ListActivityPage implements OnInit {
         };
       })
     });
+  }
+
+  changeView(){
+    if(this.slider === this.sliderConfig){
+      this.slider = this.sliderConfigWeb
+    } else{
+      this.slider = this.sliderConfig
+    }
+  }
+
+  accion() {
+    var ancla = document.getElementsByClassName('nav-enlace');
+    for (var i = 0; i < ancla.length; i++) {
+      ancla[i].classList.toggle('desaparece')
+    }
   }
 
 }

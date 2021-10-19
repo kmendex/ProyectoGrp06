@@ -85,5 +85,7 @@
       "cordova-plugin-statusbar": {},
       "com.moust.cordova.videoplayer": {}
     }
-  }
+  },
+  "main": "karma.conf.js",
+  "license": "ISC"
 }
