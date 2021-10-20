@@ -18,16 +18,21 @@ export class ListSessionPage implements OnInit {
   tipo: string;
   Tasks: TODO[];
   Tasks_backup: TODO[];
-  sliderConfig = {
-    slidesPerView: 1.6,
-    spaceBetween: 10,
-    centeredSlides: true
-  };
   sliderConfigWeb = {
-    slidesPerView: 6.6,
+    slidesPerView: 5.6,
     spaceBetween: 10,
     centeredSlides: false
   };
+  // sliderConfig = {
+  //   slidesPerView: 1.6,
+  //   spaceBetween: 10,
+  //   centeredSlides: true
+  // };
+  // sliderConfigWeb = {
+  //   slidesPerView: 6.6,
+  //   spaceBetween: 10,
+  //   centeredSlides: false
+  // };
   slider = this.sliderConfigWeb
   Tasks_result: TODO[];
 
@@ -79,13 +84,13 @@ export class ListSessionPage implements OnInit {
     });
   }
 
-  changeView(){
-    if(this.slider === this.sliderConfig){
-      this.slider = this.sliderConfigWeb
-    } else{
-      this.slider = this.sliderConfig
-    }
-  }
+  // changeView(){
+  //   if(this.slider === this.sliderConfig){
+  //     this.slider = this.sliderConfigWeb
+  //   } else{
+  //     this.slider = this.sliderConfig
+  //   }
+  // }
 
   accion() {
     var ancla = document.getElementsByClassName('nav-enlace');

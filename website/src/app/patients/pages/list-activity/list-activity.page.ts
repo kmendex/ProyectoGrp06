@@ -7,6 +7,7 @@ export class TODO {
   title: string;
   description: string;
   id: string;
+  category: string;
 }
 
 @Component({
@@ -17,17 +18,23 @@ export class TODO {
 export class ListActivityPage implements OnInit 
 {
   Tasks: TODO[];
+  Tasks_backup: TODO[];
   id: any;
-  sliderConfig = {
-    slidesPerView: 1.6,
-    spaceBetween: 10,
-    centeredSlides: true
-  };
   sliderConfigWeb = {
-    slidesPerView: 8.6,
+    slidesPerView: 5.6,
     spaceBetween: 10,
     centeredSlides: false
   };
+  // sliderConfig = {
+  //   slidesPerView: 1.6,
+  //   spaceBetween: 10,
+  //   centeredSlides: true
+  // };
+  // sliderConfigWeb = {
+  //   slidesPerView: 8.6,
+  //   spaceBetween: 10,
+  //   centeredSlides: false
+  // };
   slider = this.sliderConfigWeb
 
   constructor(
@@ -48,15 +55,24 @@ export class ListActivityPage implements OnInit
         };
       })
     });
+
+    this.crudService.getTasksActivitys(this.id).subscribe((res) => {
+      this.Tasks_backup = res.map((t) => {
+        return {
+          id: t.payload.doc.id,
+          ...t.payload.doc.data() as TODO
+        };
+      })
+    });
   }
 
-  changeView(){
-    if(this.slider === this.sliderConfig){
-      this.slider = this.sliderConfigWeb
-    } else{
-      this.slider = this.sliderConfig
-    }
-  }
+  // changeView(){
+  //   if(this.slider === this.sliderConfig){
+  //     this.slider = this.sliderConfigWeb
+  //   } else{
+  //     this.slider = this.sliderConfig
+  //   }
+  // }
 
   accion() {
     var ancla = document.getElementsByClassName('nav-enlace');
@@ -65,4 +81,19 @@ export class ListActivityPage implements OnInit
     }
   }
 
+  setCoodinacion(){
+    this.Tasks = this.Tasks.filter(current => {
+      return (current.category.indexOf("Coordinacion"));
+    });
+  }
+
+  setMovilidad(){
+    this.Tasks = this.Tasks.filter(current => {
+      return (current.category.indexOf("Movilidad"));
+    });
+  }
+
+  setReset(){
+    this.Tasks = this.Tasks_backup
+  }
 }

@@ -7,13 +7,20 @@
 <ion-content>
   
   <ion-col>
-    <ion-button class="nav-boton" (click)="accion()" expand="block" color="success">Menu</ion-button>
+    <!-- <ion-button class="nav-boton" (click)="accion()" expand="block" color="success">Menu</ion-button>
+  
+    <ion-button (click)="changeView()" class="nav-enlace desaparece" expand="block" color="success">
+      <ion-icon name="open"></ion-icon>
+    </ion-button>
+  
     <ion-button routerLink='/add-patient' class="nav-enlace desaparece" expand="block" color="success">
       Nuevo paciente
+    </ion-button> -->
+
+    <ion-button routerLink='/add-patient' expand="block" color="success">
+      Nuevo paciente
     </ion-button>
-    <ion-button (click)="changeView()" class="nav-enlace desaparece" expand="block" color="success">
-      Cambiar vista
-    </ion-button>
+
   </ion-col>
   
   <ion-searchbar showcancelbutton="" (ionInput)="filterList($event)"></ion-searchbar>

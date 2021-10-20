@@ -9,8 +9,28 @@
   
   <ion-col>
     <ion-button class="nav-boton" (click)="accion()" expand="block" color="success">Menu</ion-button>
-    <ion-button (click)="changeView()" class="nav-enlace desaparece" expand="block" color="success">
-      Cambiar vista
+    <!-- <ion-button (click)="changeView()" class="nav-enlace desaparece" expand="block" color="success">
+      <ion-icon name="open"></ion-icon>
+    </ion-button> -->
+
+    <ion-button (click)="setReset()" class="nav-enlace desaparece" expand="block" color="success">
+      <ion-icon name="clipboard"></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="setCoodinacion()" class="nav-enlace desaparece" expand="block" color="success">
+      Coordinacion
+    </ion-button>
+
+    <ion-button (click)="setMovilidad()" class="nav-enlace desaparece" expand="block" color="success">
+      Movilidad
+    </ion-button>
+
+    <ion-button (click)="setFuerza()" class="nav-enlace desaparece" expand="block" color="success">
+      Fuerza
+    </ion-button>
+
+    <ion-button (click)="setResistencia()" class="nav-enlace desaparece" expand="block" color="success">
+      Resistencia
     </ion-button>
   </ion-col>
 
