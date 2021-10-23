@@ -40,7 +40,7 @@ export class HomePage implements OnInit {
       id:['']
     })
 
-    this.crudService.getTasks().subscribe((res) => {
+    this.crudService.getFisioterapeutas().subscribe((res) => {
       this.Tasks = res.map((t) => {
         return {
           id: t.payload.doc.id,
@@ -52,9 +52,21 @@ export class HomePage implements OnInit {
   }
   onSubmit() {
 
+    // this.crudService.getFisioterapeuta(this.editForm.value.name).subscribe((res) => {
+    //   this.Tasks = res.map((t) => {
+    //     return {
+    //       id: t.payload.doc.id,
+    //       ...t.payload.doc.data() as TODO
+    //     };
+    //   })
+    // });
+    
+
+
     for(var i = 0; i < this.Tasks.length; i++)
     {
       if (this.Tasks[i].name == this.editForm.value.name && this.Tasks[i].pass == this.editForm.value.pass) {
+      //if (this.Tasks[i].pass == this.editForm.value.pass) {
         this.router.navigate(['/list-activity/'+this.Tasks[i].name]);
         this.flag = 0
       }

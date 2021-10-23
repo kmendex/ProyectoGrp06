@@ -7,12 +7,12 @@
 
 <ion-content>
   
-  <ion-col>
-    <ion-button class="nav-boton" (click)="accion()" expand="block" color="success">Menu</ion-button>
+  <!-- <ion-col>
+    <ion-button class="nav-boton" (click)="accion()" expand="block" color="success">Menu</ion-button> -->
     <!-- <ion-button (click)="changeView()" class="nav-enlace desaparece" expand="block" color="success">
       <ion-icon name="open"></ion-icon>
     </ion-button> -->
-
+<!-- 
     <ion-button (click)="setReset()" class="nav-enlace desaparece" expand="block" color="success">
       <ion-icon name="clipboard"></ion-icon>
     </ion-button>
@@ -32,10 +32,13 @@
     <ion-button (click)="setResistencia()" class="nav-enlace desaparece" expand="block" color="success">
       Resistencia
     </ion-button>
-  </ion-col>
+  </ion-col> -->
 
   <!-- <ion-list>
     <ion-item *ngFor="let task of Tasks" lines="full"> -->
+  
+  <ion-searchbar showcancelbutton="" (ionInput)="filterList($event)"></ion-searchbar>
+
 
   <div class="category-block">
     <ion-slides [options]="slider">
@@ -77,5 +80,112 @@
       <!-- </div>    
     </ion-item>
   </ion-list> -->
+
+
+
+
+
+
+  <div class="category-block">
+    <ion-slides [options]="slider">
+      <ion-slide *ngFor="let task of TasksS">
+        <div>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+
+                <img [src]="task.png" width="400" height="400"class="img-fluid" />
+
+
+                <ion-label>
+                  <strong>{{task.fisioterapeuta}}</strong>
+                  <p>{{task.description}}</p>
+                </ion-label>
+
+              </ion-card-title>
+            </ion-card-header>
+
+            <!-- <div item-end> -->
+            <ion-card-content>
+
+              <button [routerLink]="['/view-session',task.id]">
+                <ion-icon name="eye-outline" style="zoom:1.5"></ion-icon>
+              </button>
+
+              <button (click)="close(task.id)">
+                <ion-icon name="close"></ion-icon>
+              </button>
+
+            </ion-card-content>
+          </ion-card>
+
+          <!-- </div> -->
+
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+
+
+
+
+
+
+  <div class="category-block">
+    <ion-slides [options]="slider">
+      <ion-slide *ngFor="let task of TasksP">
+        <div>
+          
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+
+                <img [src]="task.png" width="400" height="400"class="img-fluid" />
+
+                <ion-label>
+                  <strong>{{task.name}}</strong>
+                  <p>{{task.email}}</p>
+                </ion-label>
+
+              </ion-card-title>
+            </ion-card-header>
+
+
+            <ion-card-content>
+              
+              <button [routerLink]="['/view-patient',task.id]">
+                <ion-icon name="eye-outline" style="zoom:1.5"></ion-icon>
+              </button>
+
+              <button [routerLink]="['/update-patient', task.id]">
+                <ion-icon name="create" style="zoom:1.5"></ion-icon>
+              </button>
+
+              <button (click)="remove(task.id)">
+                <ion-icon name="trash" style="zoom:1.5"></ion-icon>
+              </button>
+
+            </ion-card-content>
+
+          </ion-card>
+
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+
+  <ion-col>
+
+    <ion-button routerLink='/add-patient' expand="block" color="success">
+      Nuevo paciente
+    </ion-button>
+
+  </ion-col>
+
+
+
+
 
 </ion-content>
