@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { CrudService } from './../../services/crud.service';
-import { FormGroup, FormBuilder } from "@angular/forms";
 export class TODO {
   $key: string;
   name: string;
@@ -20,16 +19,22 @@ export class ListPatientPage implements OnInit
 {
   Tasks: TODO[];
   Tasks_backup: TODO[];
-  sliderConfig = {
-    slidesPerView: 1.6,
-    spaceBetween: 10,
-    centeredSlides: true
-  };
+  // sliderConfig = {
+  //   slidesPerView: 1.6,
+  //   spaceBetween: 10,
+  //   centeredSlides: true
+  // };
+  // sliderConfigWeb = {
+  //   slidesPerView: 8.6,
+  //   spaceBetween: 10,
+  //   centeredSlides: false
+  // };
   sliderConfigWeb = {
-    slidesPerView: 8.6,
+    slidesPerView: 5.6,
     spaceBetween: 10,
     centeredSlides: false
   };
+
   slider = this.sliderConfigWeb
 
   constructor(
@@ -83,13 +88,13 @@ export class ListPatientPage implements OnInit
     });
   }
 
-  changeView(){
-    if(this.slider === this.sliderConfig){
-      this.slider = this.sliderConfigWeb
-    } else{
-      this.slider = this.sliderConfig
-    }
-  }
+  // changeView(){
+  //   if(this.slider === this.sliderConfig){
+  //     this.slider = this.sliderConfigWeb
+  //   } else{
+  //     this.slider = this.sliderConfig
+  //   }
+  // }
 
 
   accion() {

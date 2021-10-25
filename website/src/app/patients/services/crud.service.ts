@@ -62,4 +62,31 @@ export class CrudService {
     return this.ngFirestore.collection('sesiones').doc(id).valueChanges();
   }
 
+
+
+  getTasksActivitysF(name) {
+    return this.ngFirestore.collection('actividades', ref => ref.where('fisioterapeuta', '==', name)).snapshotChanges();
+
+  }
+
+  getTasksPacients(name) {
+    return this.ngFirestore.collection('pacientes', ref => ref.where('fisioterapeuta', '==', name)).snapshotChanges();
+
+  }
+
+  getTasksSessionsFilter(name) {
+    return this.ngFirestore.collection('sesiones', ref => ref.where('fisioterapeuta', '==', name)).snapshotChanges();
+
+  }
+
+
+
+  getFisioterapeutas() {
+    return this.ngFirestore.collection('fisioterapeuta').snapshotChanges();
+  }
+
+  getFisioterapeuta(name) {
+    return this.ngFirestore.collection('fisioterapeuta', ref => ref.where('name', '==', name)).snapshotChanges();
+  }
+
 }
