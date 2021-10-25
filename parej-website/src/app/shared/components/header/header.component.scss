@@ -1,0 +1,23 @@
+ion-label {
+    color:var(--ion-color-terciario-gris1) !important;
+}
+
+ion-label:hover {
+    color:var(--ion-color-secundario-auxiliar4) !important;
+}
+
+ion-label:active {
+    color:var(--ion-color-secundario-auxiliar4) !important;
+}
+
+ion-tab-button {
+    font-family: 'Source sans pro';
+    font-weight: 600; //semibol
+    font-size: 14px;
+    color:var(--ion-color-terciario-gris1) !important;
+    --ripple-color: #83CBCE !important;
+}
+
+ion-tab-button:hover {
+    --background: #83CBCE  !important;
+}

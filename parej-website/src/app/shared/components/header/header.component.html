@@ -1,0 +1,30 @@
+
+  <ion-grid class="nav-container">
+    <ion-row>
+      <ion-col style="padding: 0;"size="1"></ion-col>
+
+      <ion-col class="nav-col" size=10 >
+        <ion-toolbar class="nav-toolbar">
+        <ion-tabs>
+          <ion-tab-bar class="nav-tabbar" slot="top">
+      
+            
+        
+            <ion-tab-button href='/subir'>
+              <ion-label>Dispositivo</ion-label>
+            </ion-tab-button>
+        
+            <ion-tab-button href='/informacion'>
+              <ion-label>Información</ion-label>
+            </ion-tab-button>
+        
+            <ion-button class="button-border" (click)="presentPopover($event)">
+              Iniciar Sesión
+            </ion-button>
+          </ion-tab-bar>
+        </ion-tabs>
+      </ion-toolbar>
+      </ion-col>
+      <ion-col style="padding: 0;" size="1"></ion-col>
+    </ion-row>
+  </ion-grid>

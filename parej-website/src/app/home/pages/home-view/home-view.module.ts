@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { HomeViewPageRoutingModule } from './home-view-routing.module';
 
 import { HomeViewPage } from './home-view.page';
+import { AuthModule } from '../../../auth/auth.module';
+import { HomeModule } from '../../home.module';
 
 @NgModule({
   imports: [
+    AuthModule,
     CommonModule,
     FormsModule,
     IonicModule,
-    HomeViewPageRoutingModule
+    HomeViewPageRoutingModule,
+    HomeModule
   ],
   declarations: [HomeViewPage]
 })
