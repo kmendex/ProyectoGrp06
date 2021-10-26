@@ -1,3 +1,50 @@
-<p>
-  sign-up works!
-</p>
+<ion-grid class="principal">
+  <ion-row>
+    <ion-col>
+      <ion-icon></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <ion-label class="title">Por favor introduzca su información</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <ion-button class="socialButton"></ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button class="socialButton"></ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-text-center">
+    <ion-col>
+        <mat-form-field class="fields" appearance="legacy">
+          <mat-label>Nombre completo</mat-label>
+          <input matInput [(ngModel)]="newUser.name">
+        </mat-form-field>
+        <mat-form-field class="fields" appearance="legacy">
+          <mat-label>Correo electrónico</mat-label>
+          <input style="font-size:1.09809663250366vw" matInput placeholder="usuario@ejemplo.com" [(ngModel)]="newUser.email" [formControl]="email">
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="fields" appearance="legacy">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="newUser.password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <ion-button (click)="signUp()">Registrarse</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <ion-label>Ya tienes una cuenta <a>Iniciar sesión</a></ion-label>
+    </ion-col>
+  </ion-row>
+</ion-grid>

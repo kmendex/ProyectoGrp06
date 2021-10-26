@@ -12,17 +12,18 @@ import { firebaseConfig } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { SharedModule } from './shared/shared.module';
-
+import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
      AngularFireModule.initializeApp(firebaseConfig)
     ,AngularFireAuthModule
-    , BrowserAnimationsModule
+    ,BrowserAnimationsModule
     ,BrowserModule
-    , IonicModule.forRoot()
-    , AppRoutingModule,SharedModule],
+    ,IonicModule.forRoot()
+    ,AppRoutingModule,SharedModule, HttpClientModule, MatIconModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

@@ -6,6 +6,9 @@ import { SignUpComponent } from '../sign-up/sign-up.component';
 import { AuthService } from '../../services/auth.service';
 import { User } from '../../models/user';
 import { Router } from '@angular/router';
+import {MatIconRegistry} from '@angular/material/icon'
+import {DomSanitizer} from '@angular/platform-browser'
+import { MatIcon } from '@angular/material/icon';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
@@ -21,6 +24,8 @@ export class SignInComponent implements OnInit {
     public modalController: ModalController
     , private authService: AuthService
     , private route: Router
+    ,private matIconRegistry:MatIconRegistry
+    ,private domSanitzer:DomSanitizer
   ) { }
 
   ngOnInit() {}
@@ -36,7 +41,7 @@ export class SignInComponent implements OnInit {
     this.modalController.dismiss();
     const modal = await this.modalController.create({
       component: RecoveryPassComponent,
-      cssClass: 'my-custom-class'
+      cssClass: 'recovery-pass-popover-class'
     });
     return await modal.present();
   }
@@ -44,7 +49,7 @@ export class SignInComponent implements OnInit {
     this.modalController.dismiss();
     const modal = await this.modalController.create({
       component: SignUpComponent,
-      cssClass: 'my-custom-class'
+      cssClass: 'sign-up-popover-class'
     });
     return await modal.present();
   }

@@ -27,9 +27,31 @@
 
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
+ion-content{
+    --background: #83CBCE;
+}
+
 .sign-in-popover-class{
     --min-width:24.6705710102489vw;
     --min-height:55.98958333333333vh;
+    --border-radius: 12px;
+}
+.recovery-pass-popover-class{
+    --max-width:24.6705710102489vw;
+    --max-height:47.78645833333333vh;
+    --border-radius: 12px;
+}
+
+.sign-up-popover-class{
+    --max-width:24.6705710102489vw;
+    --max-height:67.578125vh;
+    --border-radius: 12px;
+}
+
+.new-patient-popover-class{
+    --max-width:35.72474377745242vw;
+    --max-height:54.16666666666667vh;
+    --border-radius: 12px;
 }
 
 .socialButton{
@@ -48,4 +70,47 @@
     display: flex;
     align-items: center;
     text-transform: none;
+}
+
+//SearchBar
+
+ion-searchbar {
+    height: 5.20vh !important;
+    width: 20.49vw !important;
+    padding: 0%;
+    font-family: 'Source sans pro' !important;
+    font-weight: 600 !important; //semibol
+    font-size: 14px !important;
+    --background: #BCEEF0 !important;
+    --color: var(--ion-color-terciario-gris2) !important;
+    --icon-color: var(--ion-color-terciario-gris1) !important;
+    --border-radius: 0;
+    --box-shadow: none !important;
+    --placeholder-font-weight: 400;
+}
+
+ion-searchbar:hover {
+    --background: var(--ion-color-secundario-dominante3) !important;
+    --color: var(--ion-color-terciario-gris2) !important;
+    --icon-color: var(--ion-color-terciario-gris2) !important;
+}
+
+ion-searchbar:active {
+    --background: #BCEEF0 !important;
+    --opacity:50%;
+    --color: var(--ion-color-terciario-gris2) !important;
+    --icon-color: var(--ion-color-terciario-gris2) !important;
+}
+
+ion-searchbar ion-icon {
+    right: 16px !important;
+    left: auto !important;
+ }
+
+.searchbar-clear-icon { 
+    display: none !important; 
+}
+
+ion-searchbar input {
+    padding-left: 1vw !important;
 }
