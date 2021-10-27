@@ -1,53 +1,47 @@
 <ion-grid class="principal">
-  <ion-row class="ion-text-center">
-    <ion-col>
-      <ion-label class="title">Por favor introduzca su cuenta</ion-label>
-    </ion-col>
-  </ion-row>
-
-  <ion-row class="ion-text-center">
-    <ion-col >
-      <ion-button class="socialButton">Ingresar</ion-button>
-    </ion-col>
-    <ion-col>
-      <ion-button class="socialButton">Ingresar</ion-button>
-    </ion-col>
-  </ion-row>
 
   <ion-row class="ion-text-center">
     <ion-col>
-      <form>
-        <mat-form-field class="fields" appearance="legacy">
+      <ion-label class="title">Por favor introduzca su información</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <ion-button class="socialButton" color="parej">
+        <ion-icon id="google"></ion-icon> Ingresar
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button class="socialButton" color="parej">
+        <ion-icon id="facebook"></ion-icon> Ingresar
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-text-center">
+    <ion-col style="margin-top: 3.90625vh;">
+        <mat-form-field appearance="legacy">
           <mat-label>Correo electrónico</mat-label>
-          <input style="font-size:1.09809663250366vw" matInput placeholder="usuario@ejemplo.com" [(ngModel)]="newUser.email" [formControl]="email">
+          <input matInput placeholder="usuario@ejemplo.com" [(ngModel)]="newUser.email" [formControl]="email">
           <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
-
-        <mat-form-field appearance="fill">
+        <mat-form-field  appearance="legacy">
           <mat-label>Enter your password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="newUser.password">
+          <button style="background: #83CBCE;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon svgIcon="lock"></mat-icon>
           </button>
         </mat-form-field>
-
-
-      </form>
     </ion-col>
   </ion-row>
   <ion-row class="ion-text-center">
     <ion-col>
-      <ion-label class="recoveryLabel">¿Olvidó su contraseña? <a class="recoveryLink" (click)="recoveryModal()"> Recuperar contraseña</a></ion-label>
-    </ion-col>
-  </ion-row>
-  <ion-row class="ion-text-center"> 
-    <ion-col>
-      <ion-button class="loginButton" color="dEnhancement" (click)="login()">Iniciar sesión</ion-button>
+      <ion-button  color="parej" class="registerButton" (click)="login()">Iniciar sesión</ion-button>
     </ion-col>
   </ion-row>
   <ion-row class="ion-text-center">
-    <ion-col>
-      <ion-label class="registerLabel">No tienes una cuenta aún? <a class="registerLink" (click)="registerModal()"> Registrarse</a></ion-label>
+    <ion-col >
+      <ion-label style="color: #015A6B;" >¿Ya tienes una cuenta? <a>Iniciar sesión</a></ion-label>
     </ion-col>
   </ion-row>
+
 </ion-grid>

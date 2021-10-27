@@ -57,7 +57,8 @@ export class SignInComponent implements OnInit {
     this.authService.signIn(this.newUser.email, this.newUser.password).then(res=>{
       //Popup autenticación
       console.log('Usuario autenticado');
-      this.route.navigate(['/mapa']);
+      this.route.navigate(['/pacientes']);
+      this.modalController.dismiss();
       
     }).catch(err=>console.log('error'));
   }

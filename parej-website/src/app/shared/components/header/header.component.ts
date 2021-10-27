@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { SignInComponent } from 'src/app/auth/components/sign-in/sign-in.component';
 @Component({
   selector: 'app-header',
@@ -8,21 +9,16 @@ import { SignInComponent } from 'src/app/auth/components/sign-in/sign-in.compone
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private popoverController: PopoverController) { }
+  constructor(private modalController: ModalController) { }
 
   ngOnInit() {}
 
   async presentPopover(ev: any) {
-    const popover = await this.popoverController.create({
+    const modal = await this.modalController.create({
       component: SignInComponent,
-      cssClass: 'sign-in-popover-class',
-      event: ev,
-      translucent: true
+      cssClass: 'sign-up-popover-class'
     });
-    await popover.present();
-
-    const { role } = await popover.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
+    return await modal.present();
   }
 
 }

@@ -1,5 +1,5 @@
 .principal{
-    width: 24.6705710102489vw;;
+    width: 24.6705710102489vw;
     height: 55.98958333333333vh;
     padding: 0%;
     background: #83CBCE;
@@ -8,7 +8,7 @@
 .title{
     width: 15.00732064421669vw;
     height: 6.25vh;
-    margin-top: 2.604166666666667vh;
+    margin-top: 0.78125vh;
     margin-left: auto;
     margin-right: auto;
     //margin-bottom: 1.5625vh;
@@ -23,22 +23,37 @@
 
     color: #015A6B
 }
-
-.buttons{
-    width: 20.05856515373353vw;
-    height: 5.729166666666667vh;
-    margin-top: 3.125vh;
-    margin-left: auto;
-    margin-right: auto;
-    background: red;
-
-}
-
 .fields{
     width: 20.05856515373353vw;
-    height: 2.838541666666667vh;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+.registerButton{
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: none;
+}
+
+.recoveryLink{
+    color: #015A6B;;
+}
+
+#google{
+    width: 1.431185944363104vw;
+    height: 2.604166666666667vh;
+    content: url('../../../../assets/icon/auth/google.svg');
+}
+#facebook{
+    width: 1.431185944363104vw;
+    height: 2.604166666666667vh;
+    content: url('../../../../assets/icon/auth/facebook.svg');
 }
 
 
