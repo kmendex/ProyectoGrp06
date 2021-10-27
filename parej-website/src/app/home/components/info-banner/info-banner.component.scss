@@ -42,3 +42,47 @@
     width: 23.79209370424597vw;
     height: 6.770833333333333vh;
 }
+
+.registerButton{
+    width: 12.15226939970717vw;
+    height: 6.770833333333333vh;
+    --background: #015A6B;
+
+    font-family: Montserrat-Bold;
+    font-style: normal;
+    //font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+
+    /* identical to box height, or 157% */
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 0.2px;
+
+    /* light-text-color */
+    color: #FFFFFF;
+}
+
+.readMoreButton{
+    width: 8.90775988286969vw;
+    height: 6.770833333333333vh;
+    --background:transparent;
+    border: 1px solid #ECECEC;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    font-family: Montserrat-Bold;
+    font-style: normal;
+    //font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+
+    /* identical to box height, or 157% */
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 0.2px;
+
+    /* light-text-color */
+    color: #FFFFFF;
+
+}
