@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { YouTubePlayer } from '@angular/youtube-player';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-activity-detail',
   templateUrl: './activity-detail.component.html',
@@ -7,10 +8,12 @@ import { YouTubePlayer } from '@angular/youtube-player';
 })
 export class ActivityDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {}
 
-  goToGame(){}
+  goToGame(){
+    this.route.navigate(['/actividades/juego']);
+  }
 
 }
