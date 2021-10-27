@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: ActividadesPage
+  },
+  {
+    path: 'detalle',
+    loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
+  },
+  {
+    path: 'juego',
+    loadChildren: () => import('./juego/juego.module').then( m => m.JuegoPageModule)
   }
 ];
 

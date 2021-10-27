@@ -4,15 +4,15 @@ import { ActivityDetailComponent } from './components/activity-detail/activity-d
 import { ActivityGameComponent } from './components/activity-game/activity-game.component';
 import { ActivitiesViewComponent } from './components/activities-view/activities-view.component';
 import { IonicModule } from '@ionic/angular';
-import { SwiperModule } from 'swiper/angular';
+import { YouTubePlayer } from '@angular/youtube-player';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 @NgModule({
   declarations: [ActivityDetailComponent,ActivityGameComponent, ActivitiesViewComponent],
   exports: [ActivityDetailComponent,ActivityGameComponent, ActivitiesViewComponent],
   imports: [
     CommonModule
     ,IonicModule
-    ,SwiperModule
-
+    ,YouTubePlayerModule
   ]
 })
 export class ActivitiesModule { }

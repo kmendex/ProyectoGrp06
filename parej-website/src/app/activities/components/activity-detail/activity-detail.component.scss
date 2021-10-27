@@ -1,0 +1,52 @@
+.principal{
+    width: 72.18155197657394vw;
+    height: 47.265625vh;
+    margin-top: 20.3125vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title{
+    width: 16.83748169838946vw;
+    height: 6.510416666666667vh;
+
+    font-family: Montserrat-Bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 50px;
+
+    /* identical to box height, or 125% */
+    letter-spacing: 0.2px;
+
+    /* light-text-color */
+    color: #FFFFFF;
+}
+
+.description{
+    width: 32.79648609077599vw;
+    height: 5.208333333333333vh;
+}
+
+.activityButton{
+    width: 10.61493411420205vw;
+    height: 5.208333333333333vh;
+    --background: #BCEEF0;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 22px;
+
+    /* or 93% */
+
+    color: #015A6B;
+    text-transform: none;
+}
+
+.video{
+    //width: 37.18887262079063vw;
+    //height: 47.265625vh;
+    border-radius: 12%;
+}

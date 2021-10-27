@@ -1,3 +1,14 @@
-<p>
-  activity-detail works!
-</p>
+<ion-grid class="principal">
+  <ion-row>
+    <ion-col>
+      <ion-label class="title">Actividad 1</ion-label>
+      <p class="description">Desripción breve de la actividad. Explica al usuario la actividad
+        que realizará el usuario. </p>
+      <ion-button class="activityButton" (click)="goToGame()">Jugar</ion-button>
+    </ion-col>
+    <ion-col>
+      <youtube-player  videoId="3mJ9gSJBuBI" suggestedQuality="highres" [height]="363" [width]="508" [startSeconds]="4"[endSeconds]="8">
+      </youtube-player>
+    </ion-col>
+  </ion-row>
+</ion-grid>
