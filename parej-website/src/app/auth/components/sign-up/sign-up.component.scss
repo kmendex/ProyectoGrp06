@@ -26,6 +26,31 @@
     width: 20.05856515373353vw;
 }
 
+.registerButton{
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: none;
+}
+
+.recoveryLink{
+    color: #015A6B;;
+}
+
 #google{
-    background: url('../../../../assets/icon/auth/google.svg');
+    width: 1.431185944363104vw;
+    height: 2.604166666666667vh;
+    content: url('../../../../assets/icon/auth/google.svg');
+}
+#facebook{
+    width: 1.431185944363104vw;
+    height: 2.604166666666667vh;
+    content: url('../../../../assets/icon/auth/facebook.svg');
 }

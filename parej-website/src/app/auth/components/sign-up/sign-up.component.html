@@ -11,12 +11,14 @@
   </ion-row>
   <ion-row class="ion-text-center">
     <ion-col>
-      <ion-button class="socialButton">
-        <ion-icon id="google"></ion-icon> Google
+      <ion-button class="socialButton" color="parej">
+        <ion-icon id="google"></ion-icon> Ingresar
       </ion-button>
     </ion-col>
     <ion-col>
-      <ion-button class="socialButton"></ion-button>
+      <ion-button class="socialButton" color="parej">
+        <ion-icon id="facebook"></ion-icon> Ingresar
+      </ion-button>
     </ion-col>
   </ion-row>
   <ion-row class="ion-text-center">
@@ -33,20 +35,20 @@
         <mat-form-field class="fields" appearance="legacy">
           <mat-label>Enter your password</mat-label>
           <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="newUser.password">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <button style="background: #83CBCE;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon svgIcon="lock">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
         </mat-form-field>
     </ion-col>
   </ion-row>
   <ion-row class="ion-text-center">
     <ion-col>
-      <ion-button (click)="signUp()">Registrarse</ion-button>
+      <ion-button (click)="signUp()" color="parej" class="registerButton">Registrarse</ion-button>
     </ion-col>
   </ion-row>
   <ion-row class="ion-text-center">
     <ion-col>
-      <ion-label>Ya tienes una cuenta <a>Iniciar sesión</a></ion-label>
+      <ion-label class="recoveryLink">¿Ya tienes una cuenta? <a>Iniciar sesión</a></ion-label>
     </ion-col>
   </ion-row>
 </ion-grid>
