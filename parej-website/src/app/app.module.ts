@@ -25,7 +25,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ,BrowserAnimationsModule
     ,BrowserModule
     ,IonicModule.forRoot()
-    ,AppRoutingModule,SharedModule, HttpClientModule, MatIconModule, YouTubePlayerModule,DragDropModule],
+    ,AppRoutingModule,SharedModule, HttpClientModule, MatIconModule, YouTubePlayerModule,DragDropModule,SharedModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

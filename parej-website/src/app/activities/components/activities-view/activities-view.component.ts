@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 @Component({
   selector: 'app-activities-view',
   templateUrl: './activities-view.component.html',
@@ -7,11 +8,14 @@ import { Router } from '@angular/router';
 })
 export class ActivitiesViewComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router,private menuCtrl:MenuController) { }
 
   ngOnInit() {}
 
   goToDetail(){
     this.route.navigate(['/actividades/detalle'])
+  }
+  toggleMenu(){
+    this.menuCtrl.toggle();
   }
 }

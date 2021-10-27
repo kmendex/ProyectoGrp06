@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MatIconRegistry} from '@angular/material/icon'
 import {DomSanitizer} from '@angular/platform-browser'
+import { MenuController } from '@ionic/angular';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -8,7 +9,7 @@ import {DomSanitizer} from '@angular/platform-browser'
 })
 export class AppComponent {
   constructor(
-    private matIconRegistry:MatIconRegistry
+   private matIconRegistry:MatIconRegistry
    ,private domSanitzer:DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       'lock',

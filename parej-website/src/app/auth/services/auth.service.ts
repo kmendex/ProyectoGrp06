@@ -54,7 +54,7 @@ export class AuthService {
 
   logout(){
     this.AFauth.signOut().then(auth=>{
-      this.route.navigate(['/mapa']);
+      this.route.navigate(['/home-view']);
     })
   }
 
