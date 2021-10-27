@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { JuegoPageRoutingModule } from './juego-routing.module';
 
 import { JuegoPage } from './juego.page';
+import { ActivitiesModule } from '../../../activities.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    JuegoPageRoutingModule
+    JuegoPageRoutingModule,
+    ActivitiesModule
   ],
   declarations: [JuegoPage]
 })

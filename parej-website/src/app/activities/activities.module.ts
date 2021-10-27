@@ -6,13 +6,16 @@ import { ActivitiesViewComponent } from './components/activities-view/activities
 import { IonicModule } from '@ionic/angular';
 import { YouTubePlayer } from '@angular/youtube-player';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { SemanticsGamePanelComponent } from './components/semantics-game-panel/semantics-game-panel.component';
 @NgModule({
-  declarations: [ActivityDetailComponent,ActivityGameComponent, ActivitiesViewComponent],
-  exports: [ActivityDetailComponent,ActivityGameComponent, ActivitiesViewComponent],
+  declarations: [ActivityDetailComponent,ActivityGameComponent, ActivitiesViewComponent, SemanticsGamePanelComponent],
+  exports: [ActivityDetailComponent,ActivityGameComponent, ActivitiesViewComponent, SemanticsGamePanelComponent],
   imports: [
     CommonModule
     ,IonicModule
     ,YouTubePlayerModule
+    ,DragDropModule
   ]
 })
 export class ActivitiesModule { }

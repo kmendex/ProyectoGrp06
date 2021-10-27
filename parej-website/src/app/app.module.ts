@@ -15,6 +15,7 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -24,7 +25,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     ,BrowserAnimationsModule
     ,BrowserModule
     ,IonicModule.forRoot()
-    ,AppRoutingModule,SharedModule, HttpClientModule, MatIconModule, YouTubePlayerModule],
+    ,AppRoutingModule,SharedModule, HttpClientModule, MatIconModule, YouTubePlayerModule,DragDropModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

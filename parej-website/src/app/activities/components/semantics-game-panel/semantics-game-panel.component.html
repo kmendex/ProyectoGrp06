@@ -1,0 +1,83 @@
+<div class="principal">
+  <ion-grid class="grid">  
+    <ion-row>
+      <ion-col>
+
+        <div cdkDropList #sujetoList="cdkDropList" [cdkDropListData]="sujeto"
+        cdkDropListOrientation="horizontal" [cdkDropListConnectedTo]="[imagenesList]" 
+        class="sujeto" (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="validarSujeto">
+          <div class="element" *ngFor="let item of sujeto" cdkDrag [cdkDragData]="item">
+            <ion-avatar class="imagen">
+              <ion-img src="{{item}}"></ion-img>
+            </ion-avatar>
+          </div>
+        </div>
+
+      </ion-col>
+      <ion-col>
+
+        <div cdkDropList #verboList="cdkDropList" [cdkDropListData]="verbo"
+        cdkDropListOrientation="horizontal" [cdkDropListConnectedTo]="[imagenesList]" 
+        class="verbo" (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="validarVerbo">
+          <div class="element" *ngFor="let item of verbo" cdkDrag [cdkDragData]="item">
+            <ion-avatar class="imagen">
+              <ion-img src="{{item}}"></ion-img>
+            </ion-avatar>
+          </div>
+        </div>
+        
+      </ion-col>
+      <ion-col>
+
+        <div cdkDropList #predicadoList="cdkDropList" [cdkDropListData]="predicado"
+        cdkDropListOrientation="horizontal" [cdkDropListConnectedTo]="[imagenesList]" 
+        class="predicado" (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="validarPredicado" (click)="audio.play()">
+          <div class="element" *ngFor="let item of predicado" cdkDrag [cdkDragData]="item">
+            <ion-avatar class="imagen">
+              <ion-img src="{{item}}"></ion-img>
+            </ion-avatar>
+          </div>
+        </div>
+        
+      </ion-col>
+     
+    </ion-row> 
+    
+    <ion-row>
+      <ion-col>
+        <div class="semantica">
+          <ion-label class="pSujeto">{{subcategoryOneData.sujeto}}</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="semantica">
+          <ion-label class="pVerbo">{{subcategoryOneData.verbo}}</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="semantica">
+          <ion-label class="pPredicado">{{subcategoryOneData.predicado}}</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="options">
+      <ion-col>
+
+        <div cdkDropList #imagenesList="cdkDropList" [cdkDropListData]="imagenes"
+        cdkDropListOrientation="horizontal" [cdkDropListConnectedTo]="[sujetoList,verboList,predicadoList]" 
+        class="example-list" (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="noReturnPredicate">
+          <div class="element" *ngFor="let imagen of imagenes"  cdkDrag [cdkDragData]="imagen">
+            <ion-avatar class="imagen">
+              <ion-img src="{{imagen}}"></ion-img>
+            </ion-avatar>
+            
+
+          </div>
+        </div>
+
+      </ion-col>
+    </ion-row> 
+
+
+  </ion-grid>
+</div>
