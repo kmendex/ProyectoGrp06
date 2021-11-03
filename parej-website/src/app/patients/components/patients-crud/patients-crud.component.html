@@ -21,6 +21,10 @@
           <input matInput [(ngModel)]="newPatient.name" >
         </mat-form-field>
         <mat-form-field class="fields" appearance="legacy">
+          <mat-label>Identificación</mat-label>
+          <input matInput [(ngModel)]="newPatient.identification" >
+        </mat-form-field>
+        <mat-form-field class="fields" appearance="legacy">
           <mat-label>Correo electrónico</mat-label>
           <input style="font-size:1.09809663250366vw" matInput placeholder="usuario@ejemplo.com" [(ngModel)]="newPatient.email">
           <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
@@ -28,6 +32,10 @@
         <mat-form-field class="fields" appearance="legacy">
           <mat-label>Teléfono</mat-label>
           <input matInput [(ngModel)]="newPatient.phoneNumber">
+        </mat-form-field>
+        <mat-form-field class="fields" appearance="legacy">
+          <mat-label>Descripción del padecimiento</mat-label>
+          <input matInput [(ngModel)]="newPatient.description" >
         </mat-form-field>
         <ion-row class="ion-text-center" >
           <ion-col>

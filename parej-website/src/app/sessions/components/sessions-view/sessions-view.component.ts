@@ -22,7 +22,7 @@ export class SessionsViewComponent implements OnInit {
     this.modalController.dismiss();
     const modal = await this.modalController.create({
       component: SessionsCrudComponent,
-      cssClass: 'new-patient-popover-class'
+      cssClass: 'new-session-popover-class'
     });
     return await modal.present();
   }

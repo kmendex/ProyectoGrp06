@@ -53,7 +53,13 @@ ion-content{
 
 .new-patient-popover-class{
     --max-width:35.72474377745242vw;
-    --max-height:54.16666666666667vh;
+    --max-height:70.16666666666667vh;
+    --border-radius: 12px;
+}
+
+.new-session-popover-class{
+    --max-width:52.72474377745242vw;
+    --max-height:60.16666666666667vh;
     --border-radius: 12px;
 }
 

@@ -17,8 +17,10 @@ export class PatientsService {
         this.db.collection('patients').doc(patient.patientId).set({
           patientId:patient.patientId
           ,name:patient.name
+          ,identification: patient.identification
           ,email:patient.email
           ,phoneNumber:patient.phoneNumber
+          ,description: patient.description
           ,avatar:patient.avatar
           ,physioId:patient.physioId}).then().catch(err=> err);
       });
