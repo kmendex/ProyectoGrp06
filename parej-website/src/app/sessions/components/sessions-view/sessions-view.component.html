@@ -1,0 +1,19 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-icon name="menu" class="menuIcon" (click)="toggleMenu()"></ion-icon>
+    </ion-col>
+  </ion-row>  
+  <ion-row class="ion-text-right">
+    <ion-col>
+      <ion-button class="button" (click)="newSession()">
+        Nueva Sesión <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-col>      
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <app-sessions-list></app-sessions-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,47 @@
+<ion-grid class="principal"> 
+  <ion-row>
+    <ion-col size=auto>
+      <ion-img class="image" [src]="newSession.avatar"></ion-img>
+      <ion-row class="ion-text-center">        
+      </ion-row>
+    </ion-col>
+    <ion-col>
+        <mat-form-field class="fields" appearance="legacy">
+          <mat-label>Paciente</mat-label>
+          <input matInput [(ngModel)]="newSession.patientName" >
+        </mat-form-field>       
+         <mat-form-field class="fields" appearance="legacy">
+          <mat-label>Actividad</mat-label>
+          <mat-select placeholder="Actividades" [(ngModel)]="newSession.activityId">
+            <mat-option value="Actividad1">Actividad 1</mat-option>
+          </mat-select>
+        </mat-form-field>                                   
+        
+        <mat-form-field class="fields" appearance="legacy">
+          <mat-label>Fecha</mat-label>
+          <input matInput [(ngModel)]="newSession.date">
+          <!--
+          <input matInput [matDatepicker]="datepicker" [(ngModel)]="newSession.date">
+            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker></mat-datepicker>
+          -->
+        </mat-form-field>         
+        
+        <mat-form-field class="fields" appearance="legacy">
+          <mat-label>Hora</mat-label>
+          <input matInput [(ngModel)]="newSession.hour">
+        </mat-form-field>
+        <mat-form-field class="fields" appearance="legacy">
+          <mat-label>Duración</mat-label>
+          <input matInput [(ngModel)]="newSession.duration">
+        </mat-form-field>
+        <ion-row class="ion-text-center" >
+          <ion-col>
+            <ion-button class="button" (click)="addSession()">
+              Agregar <ion-icon name="add"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,11 @@
+<ion-grid>    
+  
+  <ion-row class="ion-text-left">    
+    <ion-slides pager="true" [options]="slider">
+      <ion-slide *ngFor="let session of sessions">
+        <app-sessions-cards [session]="session"></app-sessions-cards>
+      </ion-slide>  
+    </ion-slides>    
+  </ion-row>
+
+</ion-grid>

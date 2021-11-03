@@ -1,0 +1,23 @@
+<ion-card class="card" (click)="goToDetail()">
+  <ion-img [src]="[session.avatar]" class="image"></ion-img>
+  <ion-card-header>
+    <ion-card-title>{{session.activityId}}</ion-card-title>
+  </ion-card-header>
+  <ion-label>{{session.patientName}}</ion-label>      
+  <ion-card-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>Fecha:</ion-col>
+        <ion-col>{{session.date}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Hora:</ion-col>
+        <ion-col>{{session.hour}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Duración:</ion-col>
+        <ion-col>{{session.duration}}</ion-col>
+      </ion-row>                                              
+    </ion-grid>
+  </ion-card-content>
+</ion-card>                

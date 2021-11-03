@@ -7,6 +7,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SessionsModule } from './sessions/sessions.module';
 
 import { firebaseConfig } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -16,15 +17,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [
+  imports: [    
      AngularFireModule.initializeApp(firebaseConfig)
     ,AngularFireAuthModule
     ,BrowserAnimationsModule
     ,BrowserModule
     ,IonicModule.forRoot()
+    ,SessionsModule    
     ,AppRoutingModule,SharedModule, HttpClientModule, MatIconModule, YouTubePlayerModule,DragDropModule,SharedModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
